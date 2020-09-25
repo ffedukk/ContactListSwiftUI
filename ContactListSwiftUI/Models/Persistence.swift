@@ -6,6 +6,7 @@
 //
 
 import CoreData
+import SwiftUI
 
 struct PersistenceController {
     static let shared = PersistenceController()
@@ -13,9 +14,21 @@ struct PersistenceController {
     static var preview: PersistenceController = {
         let result = PersistenceController(inMemory: true)
         let viewContext = result.container.viewContext
-        for _ in 0..<10 {
+        for i in 0..<5 {
             let newItem = Item(context: viewContext)
-            newItem.timestamp = Date()
+            newItem.name = "Rodger"
+            if i%2 == 0 {
+                newItem.surname = "Federer"
+                newItem.name = "Grigor"
+            }
+            if i%3 == 0 {
+                newItem.connection = "work"
+                
+            }
+            if i%5 == 0 {
+                let UIimgData = UIImage(named: "turtlerock")?.jpegData(compressionQuality: 1)
+                newItem.photo = UIimgData
+            }
         }
         do {
             try viewContext.save()

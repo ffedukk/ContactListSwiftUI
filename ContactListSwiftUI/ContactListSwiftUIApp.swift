@@ -13,8 +13,8 @@ struct ContactListSwiftUIApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+            ContactsView()
+                .environmentObject(CoreDataWorker(persistenceController.container.viewContext))
         }
     }
 }

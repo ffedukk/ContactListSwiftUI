@@ -7,14 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		30B176D2251E33F900E04708 /* AddContactView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B176D1251E33F900E04708 /* AddContactView.swift */; };
 		30B3418B251A352500E39C84 /* ContactListSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B3418A251A352500E39C84 /* ContactListSwiftUIApp.swift */; };
-		30B3418D251A352500E39C84 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B3418C251A352500E39C84 /* ContentView.swift */; };
 		30B3418F251A352C00E39C84 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30B3418E251A352C00E39C84 /* Assets.xcassets */; };
 		30B34192251A352C00E39C84 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 30B34191251A352C00E39C84 /* Preview Assets.xcassets */; };
 		30B34194251A352C00E39C84 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B34193251A352C00E39C84 /* Persistence.swift */; };
 		30B34197251A352C00E39C84 /* ContactListSwiftUI.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 30B34195251A352C00E39C84 /* ContactListSwiftUI.xcdatamodeld */; };
 		30B341A2251A352C00E39C84 /* ContactListSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B341A1251A352C00E39C84 /* ContactListSwiftUITests.swift */; };
 		30B341AD251A352C00E39C84 /* ContactListSwiftUIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B341AC251A352C00E39C84 /* ContactListSwiftUIUITests.swift */; };
+		30B341D7251A3BD300E39C84 /* ContactRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B341D6251A3BD300E39C84 /* ContactRow.swift */; };
+		30B341F4251A40A700E39C84 /* turtlerock.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 30B341F3251A40A700E39C84 /* turtlerock.jpg */; };
+		30B341FF251B61EB00E39C84 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B341FE251B61EB00E39C84 /* Data.swift */; };
+		30BA1C83251E0DB800794CED /* Item+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BA1C81251E0DB800794CED /* Item+CoreDataClass.swift */; };
+		30BA1C8C251E0EC300794CED /* CoreDataWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BA1C8B251E0EC300794CED /* CoreDataWorker.swift */; };
+		30BA1C91251E123D00794CED /* ContactsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BA1C90251E123D00794CED /* ContactsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,9 +41,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		30B176D1251E33F900E04708 /* AddContactView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddContactView.swift; sourceTree = "<group>"; };
 		30B34187251A352500E39C84 /* ContactListSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ContactListSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30B3418A251A352500E39C84 /* ContactListSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListSwiftUIApp.swift; sourceTree = "<group>"; };
-		30B3418C251A352500E39C84 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		30B3418E251A352C00E39C84 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		30B34191251A352C00E39C84 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		30B34193251A352C00E39C84 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -49,6 +55,12 @@
 		30B341A8251A352C00E39C84 /* ContactListSwiftUIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ContactListSwiftUIUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		30B341AC251A352C00E39C84 /* ContactListSwiftUIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListSwiftUIUITests.swift; sourceTree = "<group>"; };
 		30B341AE251A352C00E39C84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		30B341D6251A3BD300E39C84 /* ContactRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactRow.swift; sourceTree = "<group>"; };
+		30B341F3251A40A700E39C84 /* turtlerock.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = turtlerock.jpg; sourceTree = "<group>"; };
+		30B341FE251B61EB00E39C84 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		30BA1C81251E0DB800794CED /* Item+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataClass.swift"; sourceTree = "<group>"; };
+		30BA1C8B251E0EC300794CED /* CoreDataWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataWorker.swift; sourceTree = "<group>"; };
+		30BA1C90251E123D00794CED /* ContactsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +91,7 @@
 		30B3417E251A352500E39C84 = {
 			isa = PBXGroup;
 			children = (
+				30BA1C81251E0DB800794CED /* Item+CoreDataClass.swift */,
 				30B34189251A352500E39C84 /* ContactListSwiftUI */,
 				30B341A0251A352C00E39C84 /* ContactListSwiftUITests */,
 				30B341AB251A352C00E39C84 /* ContactListSwiftUIUITests */,
@@ -99,12 +112,15 @@
 		30B34189251A352500E39C84 /* ContactListSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				30B341FD251B61D800E39C84 /* Models */,
 				30B3418A251A352500E39C84 /* ContactListSwiftUIApp.swift */,
-				30B3418C251A352500E39C84 /* ContentView.swift */,
+				30BA1C90251E123D00794CED /* ContactsView.swift */,
+				30B176D1251E33F900E04708 /* AddContactView.swift */,
+				30B341D6251A3BD300E39C84 /* ContactRow.swift */,
 				30B3418E251A352C00E39C84 /* Assets.xcassets */,
-				30B34193251A352C00E39C84 /* Persistence.swift */,
 				30B34198251A352C00E39C84 /* Info.plist */,
 				30B34195251A352C00E39C84 /* ContactListSwiftUI.xcdatamodeld */,
+				30B341E3251A3F7A00E39C84 /* Resurches */,
 				30B34190251A352C00E39C84 /* Preview Content */,
 			);
 			path = ContactListSwiftUI;
@@ -134,6 +150,24 @@
 				30B341AE251A352C00E39C84 /* Info.plist */,
 			);
 			path = ContactListSwiftUIUITests;
+			sourceTree = "<group>";
+		};
+		30B341E3251A3F7A00E39C84 /* Resurches */ = {
+			isa = PBXGroup;
+			children = (
+				30B341F3251A40A700E39C84 /* turtlerock.jpg */,
+			);
+			path = Resurches;
+			sourceTree = "<group>";
+		};
+		30B341FD251B61D800E39C84 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				30B341FE251B61EB00E39C84 /* Data.swift */,
+				30BA1C8B251E0EC300794CED /* CoreDataWorker.swift */,
+				30B34193251A352C00E39C84 /* Persistence.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -241,6 +275,7 @@
 			files = (
 				30B34192251A352C00E39C84 /* Preview Assets.xcassets in Resources */,
 				30B3418F251A352C00E39C84 /* Assets.xcassets in Resources */,
+				30B341F4251A40A700E39C84 /* turtlerock.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,9 +300,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30B341FF251B61EB00E39C84 /* Data.swift in Sources */,
 				30B34194251A352C00E39C84 /* Persistence.swift in Sources */,
-				30B3418D251A352500E39C84 /* ContentView.swift in Sources */,
+				30B341D7251A3BD300E39C84 /* ContactRow.swift in Sources */,
+				30BA1C91251E123D00794CED /* ContactsView.swift in Sources */,
 				30B34197251A352C00E39C84 /* ContactListSwiftUI.xcdatamodeld in Sources */,
+				30BA1C8C251E0EC300794CED /* CoreDataWorker.swift in Sources */,
+				30B176D2251E33F900E04708 /* AddContactView.swift in Sources */,
+				30BA1C83251E0DB800794CED /* Item+CoreDataClass.swift in Sources */,
 				30B3418B251A352500E39C84 /* ContactListSwiftUIApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -427,6 +467,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"ContactListSwiftUI/Preview Content\"";
+				DEVELOPMENT_TEAM = UM9B77K58H;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = ContactListSwiftUI/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -448,6 +489,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"ContactListSwiftUI/Preview Content\"";
+				DEVELOPMENT_TEAM = UM9B77K58H;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = ContactListSwiftUI/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -468,6 +510,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UM9B77K58H;
 				INFOPLIST_FILE = ContactListSwiftUITests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -489,6 +532,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UM9B77K58H;
 				INFOPLIST_FILE = ContactListSwiftUITests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -509,6 +553,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UM9B77K58H;
 				INFOPLIST_FILE = ContactListSwiftUIUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -528,6 +573,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UM9B77K58H;
 				INFOPLIST_FILE = ContactListSwiftUIUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
