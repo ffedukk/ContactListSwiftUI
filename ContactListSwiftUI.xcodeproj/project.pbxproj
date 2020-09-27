@@ -20,6 +20,8 @@
 		30BA1C83251E0DB800794CED /* Item+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BA1C81251E0DB800794CED /* Item+CoreDataClass.swift */; };
 		30BA1C8C251E0EC300794CED /* CoreDataWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BA1C8B251E0EC300794CED /* CoreDataWorker.swift */; };
 		30BA1C91251E123D00794CED /* ContactsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BA1C90251E123D00794CED /* ContactsView.swift */; };
+		30BF70FA2520F1DF00026E81 /* AddPhotoImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BF70F92520F1DF00026E81 /* AddPhotoImage.swift */; };
+		30BF71052520FD1C00026E81 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BF71042520FD1C00026E81 /* ImagePicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +61,8 @@
 		30BA1C81251E0DB800794CED /* Item+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataClass.swift"; sourceTree = "<group>"; };
 		30BA1C8B251E0EC300794CED /* CoreDataWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataWorker.swift; sourceTree = "<group>"; };
 		30BA1C90251E123D00794CED /* ContactsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsView.swift; sourceTree = "<group>"; };
+		30BF70F92520F1DF00026E81 /* AddPhotoImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPhotoImage.swift; sourceTree = "<group>"; };
+		30BF71042520FD1C00026E81 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,9 +114,11 @@
 		30B34189251A352500E39C84 /* ContactListSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				30BF70F82520F1B900026E81 /* Supporting Views */,
 				30B341FD251B61D800E39C84 /* Models */,
 				30B3418A251A352500E39C84 /* ContactListSwiftUIApp.swift */,
 				30BA1C90251E123D00794CED /* ContactsView.swift */,
+				30BF71042520FD1C00026E81 /* ImagePicker.swift */,
 				30B176D1251E33F900E04708 /* AddContactView.swift */,
 				30B341D6251A3BD300E39C84 /* ContactRow.swift */,
 				30B3418E251A352C00E39C84 /* Assets.xcassets */,
@@ -165,6 +171,14 @@
 				30B34193251A352C00E39C84 /* Persistence.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		30BF70F82520F1B900026E81 /* Supporting Views */ = {
+			isa = PBXGroup;
+			children = (
+				30BF70F92520F1DF00026E81 /* AddPhotoImage.swift */,
+			);
+			path = "Supporting Views";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -302,7 +316,9 @@
 				30BA1C91251E123D00794CED /* ContactsView.swift in Sources */,
 				30B34197251A352C00E39C84 /* ContactListSwiftUI.xcdatamodeld in Sources */,
 				30BA1C8C251E0EC300794CED /* CoreDataWorker.swift in Sources */,
+				30BF70FA2520F1DF00026E81 /* AddPhotoImage.swift in Sources */,
 				30B176D2251E33F900E04708 /* AddContactView.swift in Sources */,
+				30BF71052520FD1C00026E81 /* ImagePicker.swift in Sources */,
 				30BA1C83251E0DB800794CED /* Item+CoreDataClass.swift in Sources */,
 				30B3418B251A352500E39C84 /* ContactListSwiftUIApp.swift in Sources */,
 			);
@@ -474,7 +490,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.semenov.ContactListSwiftUI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -496,7 +512,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.semenov.ContactListSwiftUI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

@@ -80,13 +80,19 @@ struct ContactRow: View {
     }
 }
 
+#if DEBUG
+
 struct ContactRow_Previews: PreviewProvider {
     static var previews: some View {
         Group {
+            ContactRow(item: CoreDataWorker(PersistenceController.preview.container.viewContext).items[0])
             ContactRow(item: CoreDataWorker(PersistenceController.preview.container.viewContext).items[1])
+            ContactRow(item: CoreDataWorker(PersistenceController.preview.container.viewContext).items[2])
             ContactRow(item: CoreDataWorker(PersistenceController.preview.container.viewContext).items[3])
         }
         .previewLayout(.fixed(width: 400 ,height: 150))
         .environmentObject(CoreDataWorker(PersistenceController.preview.container.viewContext))
     }
 }
+
+#endif

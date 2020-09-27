@@ -17,15 +17,15 @@ struct ContactsView: View {
     var transition: AnyTransition {
         let insertion = AnyTransition.move(edge: .trailing)
             .combined(with: .opacity)
-        let removal = AnyTransition.scale(scale: 5)
-            .combined(with: .opacity)
+            .animation(.easeIn(duration: 0.5))
+        let removal = AnyTransition.opacity
         return .asymmetric(insertion: insertion, removal: removal)
     }
     
     var blur: AnyTransition {
         let setBlur = AnyTransition.move(edge: .top)
             .combined(with: .opacity)
-            .animation(.easeInOut(duration: 4))
+            .animation(.easeInOut(duration: 2))
         return setBlur
     }
     
@@ -33,21 +33,18 @@ struct ContactsView: View {
         ZStack {
             NavigationView {
                 List {
-                    
-                    Toggle(isOn: $contactsData.isDifferentColors) {
+                    Toggle(isOn: $contactsData.isDifferentColors.animation()) {
                         Text("Change colors")
                     }
                     ForEach(contactsData.items) { item in
                         ContactRow(item: item)
                     }
                     .onDelete(perform: contactsData.deleteItems)
-                    .animation(.default)
                 }
-                
                 .toolbar {
                     Button(action: {
                         withAnimation {
-                            isAddContactPresented = true
+                            isAddContactPresented.toggle()
                         }
                         
                     }) {
@@ -65,7 +62,7 @@ struct ContactsView: View {
                     if isAddContactPresented {
                         AddContactView(isPresented: $isAddContactPresented)
                             .environmentObject(contactsData)
-                            .frame(width: geometry.size.width - 10, height: 300)
+                            .frame(width: geometry.size.width - 10, height: 500)
                             .cornerRadius(30.0)
                             .padding(5)
                             .animation(.default)
@@ -79,10 +76,18 @@ struct ContactsView: View {
     }
 }
 
-struct ContentView2_Previews: PreviewProvider {
+#if DEBUG
+
+struct ContactsView_Previews: PreviewProvider {
     static var previews: some View {
+        Group {
         ContactsView()
             .environmentObject(CoreDataWorker(PersistenceController.preview.container.viewContext))
+            .colorScheme(.dark)
+        ContactsView()
+            .environmentObject(CoreDataWorker(PersistenceController.preview.container.viewContext))
+        }
     }
 }
 
+#endif

@@ -11,25 +11,34 @@ import SwiftUI
 struct PersistenceController {
     static let shared = PersistenceController()
 
+    #if DEBUG
+    
     static var preview: PersistenceController = {
         let result = PersistenceController(inMemory: true)
         let viewContext = result.container.viewContext
-        for i in 0..<5 {
-            let newItem = Item(context: viewContext)
-            newItem.name = "Rodger"
-            if i%2 == 0 {
-                newItem.surname = "Federer"
-                newItem.name = "Grigor"
-            }
-            if i%3 == 0 {
-                newItem.connection = "work"
-                
-            }
-            if i%5 == 0 {
-                let UIimgData = UIImage(named: "turtlerock")?.jpegData(compressionQuality: 1)
-                newItem.photo = UIimgData
-            }
-        }
+        
+        let UIimgData = UIImage(named: "turtlerock")?.jpegData(compressionQuality: 1)
+        
+        let newItem1 = Item(context: viewContext)
+        newItem1.name = "Rodger"
+        newItem1.surname = "Federer"
+        newItem1.connection = "work"
+        
+        newItem1.photo = UIimgData
+        
+        let newItem2 = Item(context: viewContext)
+        newItem2.name = "Grigor"
+        newItem2.connection = "family"
+        
+        let newItem3 = Item(context: viewContext)
+        newItem3.name = "Alexandr"
+        newItem3.surname = "Zverev"
+        
+        let newItem4 = Item(context: viewContext)
+        newItem4.name = "Daniil"
+        newItem4.connection = "school"
+        newItem4.photo = UIimgData
+
         do {
             try viewContext.save()
         } catch {
@@ -41,6 +50,8 @@ struct PersistenceController {
         return result
     }()
 
+    #endif
+    
     let container: NSPersistentContainer
 
     init(inMemory: Bool = false) {

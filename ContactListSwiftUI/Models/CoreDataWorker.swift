@@ -19,14 +19,14 @@ class CoreDataWorker: ObservableObject {
         items = self.fetch().sorted { $0.name.lowercased() < $1.name.lowercased() }
     }
     
-    func addItem(name: String, surname: String, connection: String, photo: Bool) {
+    func addItem(name: String, surname: String?, connection: String?, photo: UIImage?) {
         let newItem = Item(context: viewContext)
         newItem.name = name
         newItem.surname = surname
         newItem.connection = connection
-        if photo {
-            let UIimgData = UIImage(named: "turtlerock")?.jpegData(compressionQuality: 1)
-                    newItem.photo = UIimgData
+        if let photo = photo {
+            let UIimgData = photo.jpegData(compressionQuality: 1)
+            newItem.photo = UIimgData
         }
         do {
             items.append(newItem)
