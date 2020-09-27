@@ -11,16 +11,14 @@ import CoreData
 
 struct ContactsView: View {
     
-    @EnvironmentObject var contactsData: CoreDataWorker
+    @EnvironmentObject private var contactsData: CoreDataWorker
     @State private var isAddContactPresented: Bool = false
     
     var transition: AnyTransition {
         let insertion = AnyTransition.move(edge: .trailing)
             .combined(with: .opacity)
-            .animation(.easeInOut(duration: 0.3))
-        let removal = AnyTransition.move(edge: .trailing)
+        let removal = AnyTransition.scale(scale: 5)
             .combined(with: .opacity)
-            .animation(.easeInOut(duration: 0.3))
         return .asymmetric(insertion: insertion, removal: removal)
     }
     
@@ -41,9 +39,9 @@ struct ContactsView: View {
                     }
                     ForEach(contactsData.items) { item in
                         ContactRow(item: item)
-                        
                     }
                     .onDelete(perform: contactsData.deleteItems)
+                    .animation(.default)
                 }
                 
                 .toolbar {
@@ -70,7 +68,7 @@ struct ContactsView: View {
                             .frame(width: geometry.size.width - 10, height: 300)
                             .cornerRadius(30.0)
                             .padding(5)
-                            .animation(.linear)
+                            .animation(.default)
                             .transition(transition)
                             .disableAutocorrection(true)
                         Spacer()

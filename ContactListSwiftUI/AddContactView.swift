@@ -13,7 +13,7 @@ struct AddContactView: View {
     @State private var surname = ""
     @State private var connection = ""
     @Binding var isPresented: Bool
-    @EnvironmentObject var contactsData: CoreDataWorker
+    @EnvironmentObject private var contactsData: CoreDataWorker
     
     var body: some View {
         
@@ -21,25 +21,32 @@ struct AddContactView: View {
             Text("Add Contact")
                 .font(.title)
             VStack(alignment: .leading, spacing: 20) {
-                TextField("name", text: $name)
-                TextField("surename", text: $surname)
-                TextField("connection", text: $connection)
+                Group {
+                    TextField("name", text: $name)
+                    TextField("surename", text: $surname)
+                    TextField("connection", text: $connection)
+                }
+                .frame(height: 35, alignment: .center)
+                .font(Font.system(size: 20, design: .default))
+                
                 Spacer()
+                
                 HStack {
                     Button("Cancel") {
                         withAnimation {
                             isPresented = false
                         }
                     }
+                    .frame(width: 100, height: 50, alignment: .center)
                     Spacer()
                     Button("Add") {
                         withAnimation {
                             contactsData.addItem(name: name, surname: surname, connection: connection, photo: true)
                             isPresented = false
                         }
-                        
                     }
                     .disabled(name.isEmpty)
+                    .frame(width: 100, height: 50, alignment: .center)
                 }
                 .font(.title2)
             }
@@ -48,8 +55,6 @@ struct AddContactView: View {
     }
     
 }
-
-
 
 
 struct AddContactView_Previews: PreviewProvider {
