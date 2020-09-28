@@ -114,7 +114,6 @@
 		30B34189251A352500E39C84 /* ContactListSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
-				30BF70F82520F1B900026E81 /* Supporting Views */,
 				30B341FD251B61D800E39C84 /* Models */,
 				30B3418A251A352500E39C84 /* ContactListSwiftUIApp.swift */,
 				30BA1C90251E123D00794CED /* ContactsView.swift */,
@@ -124,6 +123,7 @@
 				30B3418E251A352C00E39C84 /* Assets.xcassets */,
 				30B34198251A352C00E39C84 /* Info.plist */,
 				30B34195251A352C00E39C84 /* ContactListSwiftUI.xcdatamodeld */,
+				30BF70F82520F1B900026E81 /* Supporting Views */,
 				30B341E3251A3F7A00E39C84 /* Resurches */,
 				30B34190251A352C00E39C84 /* Preview Content */,
 			);

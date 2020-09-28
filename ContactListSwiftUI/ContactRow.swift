@@ -31,8 +31,8 @@ struct ContactRow: View {
         HStack {
             if let photo = item.photo {
                 let UIimage = UIImage(data: photo)
-                Image(uiImage: UIimage!)
-                    .resizable()
+                Image(uiImage: UIimage!).resizable()
+                    .scaledToFill()
                     .frame(width: 100, height: 100, alignment: .center)
                     .clipShape(Circle())
                     .shadow(radius: 10)

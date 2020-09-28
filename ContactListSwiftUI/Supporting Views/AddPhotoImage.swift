@@ -13,6 +13,7 @@ struct AddPhotoImage: View {
     
     var body: some View {
         image.resizable()
+            .scaledToFill()
             .frame(width: 100, height: 100, alignment: .center)
             .clipShape(Circle())
     }
@@ -22,8 +23,11 @@ struct AddPhotoImage: View {
 
 struct AddPhotoImage_Previews: PreviewProvider {
     static var previews: some View {
-        AddPhotoImage(image: Image("man"))
-            .previewLayout(.fixed(width: 200, height: 200))
+        Group {
+            AddPhotoImage(image: Image("man"))
+            AddPhotoImage(image: Image("clouds"))
+        }
+        .previewLayout(.fixed(width: 200, height: 200))
     }
 }
 

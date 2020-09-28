@@ -24,15 +24,13 @@ struct AddContactView: View {
     }
     
     var body: some View {
-        
         VStack(alignment: .center, spacing: 20) {
             Text("Add Contact")
                 .font(.title)
-            
             AddPhotoImage(image: image)
-                .onTapGesture(count: 1, perform: {
+                .onTapGesture(count: 1) {
                     self.showingImagePicker = true
-                })
+                }
             VStack(alignment: .leading, spacing: 20) {
                 Divider()
                 Group {
@@ -66,6 +64,7 @@ struct AddContactView: View {
                 }
                 .font(.title2)
             }
+            Spacer()
         }
         .padding()
         .sheet(isPresented: $showingImagePicker, onDismiss: loadImage) {
