@@ -77,7 +77,7 @@ struct AddContactView: View {
         }
         .padding()
         
-        .fullScreenCover(isPresented: $showingImagePicker) {
+        .fullScreenCover(isPresented: $showingImagePicker, onDismiss: loadImage) {
             ImagePicker(image: self.$inputImage, source: source)
                 .ignoresSafeArea()
         }

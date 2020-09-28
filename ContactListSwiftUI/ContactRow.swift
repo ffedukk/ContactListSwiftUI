@@ -23,7 +23,7 @@ struct ContactRow: View {
             .animation(.easeInOut(duration: 0.3))
         let removal = AnyTransition.scale
             .combined(with: .opacity)
-            .animation(.easeInOut(duration: 0.3))
+            .animation(.easeInOut(duration: 0.5))
         return .asymmetric(insertion: insertion, removal: removal)
     }
     
