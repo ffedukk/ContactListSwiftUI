@@ -11,7 +11,8 @@ struct AddContactView: View {
     
     @State private var name: String = ""
     @State private var surname: String = ""
-    @State private var connection: String = ""
+    @State private var chosenConnection = 0
+    private var connections = ["None", "Work", "Family", "Study"]
     @State private var image: Image = Image("man")
     @State private var inputImage: UIImage?
     @State private var showingImagePicker: Bool = false
@@ -19,6 +20,7 @@ struct AddContactView: View {
     @State private var source: UIImagePickerController.SourceType = .photoLibrary
     @Environment(\.presentationMode) private var presentationMode
     @EnvironmentObject private var contactsData: CoreDataWorker
+    
     
     func loadImage() {
         guard let inputImage = inputImage else { return }
@@ -39,7 +41,11 @@ struct AddContactView: View {
                 Group {
                     TextField("name", text: $name)
                     TextField("surename", text: $surname)
-                    TextField("connection", text: $connection)
+                    Picker(selection: $chosenConnection, label: Text(connections[chosenConnection])) {
+                        ForEach(0..<connections.count) { index in
+                            Text(self.connections[index]).tag(index)
+                        }
+                    }.pickerStyle(SegmentedPickerStyle())
                 }
                 .frame(height: 35, alignment: .center)
                 .font(Font.system(size: 20, design: .default))
@@ -57,7 +63,7 @@ struct AddContactView: View {
                         withAnimation {
                             contactsData.addItem(name: name,
                                                  surname: surname.isEmpty ? nil : surname,
-                                                 connection: connection.isEmpty ? nil : connection,
+                                                 connection: chosenConnection == 0 ? nil : connections[chosenConnection],
                                                  photo: inputImage)
                             presentationMode.wrappedValue.dismiss()
                         }
