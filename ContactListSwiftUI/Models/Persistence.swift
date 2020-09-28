@@ -22,13 +22,13 @@ struct PersistenceController {
         let newItem1 = Item(context: viewContext)
         newItem1.name = "Rodger"
         newItem1.surname = "Federer"
-        newItem1.connection = "work"
+        newItem1.connection = "Work"
         
         newItem1.photo = UIimgData
         
         let newItem2 = Item(context: viewContext)
         newItem2.name = "Grigor"
-        newItem2.connection = "family"
+        newItem2.connection = "Family"
         
         let newItem3 = Item(context: viewContext)
         newItem3.name = "Alexandr"
@@ -36,7 +36,7 @@ struct PersistenceController {
         
         let newItem4 = Item(context: viewContext)
         newItem4.name = "Daniil"
-        newItem4.connection = "school"
+        newItem4.connection = "Study"
         newItem4.photo = UIimgData
 
         do {
