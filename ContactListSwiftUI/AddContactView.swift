@@ -41,7 +41,7 @@ struct AddContactView: View {
                 Group {
                     TextField("name", text: $name)
                     TextField("surename", text: $surname)
-                    Picker(selection: $chosenConnection, label: Text(connections[chosenConnection])) {
+                    Picker(selection: $chosenConnection, label: Text("")) {
                         ForEach(0..<connections.count) { index in
                             Text(self.connections[index]).tag(index)
                         }
@@ -76,8 +76,10 @@ struct AddContactView: View {
             Spacer()
         }
         .padding()
-        .sheet(isPresented: $showingImagePicker, onDismiss: loadImage) {
+        
+        .fullScreenCover(isPresented: $showingImagePicker) {
             ImagePicker(image: self.$inputImage, source: source)
+                .ignoresSafeArea()
         }
         .actionSheet(isPresented: $showingActionSheet) {
             ActionSheet(title: Text("Choose a photo") ,buttons: [.default(Text("Take a photo")) {
