@@ -54,7 +54,7 @@ struct AddContactView: View {
                         withAnimation {
                             contactsData.addItem(name: name,
                                                  surname: surname.isEmpty ? nil : surname,
-                                                 connection: connection.isEmpty ? nil : surname,
+                                                 connection: connection.isEmpty ? nil : connection,
                                                  photo: inputImage)
                             presentationMode.wrappedValue.dismiss()
                         }
