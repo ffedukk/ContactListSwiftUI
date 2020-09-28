@@ -12,10 +12,10 @@ struct AddContactView: View {
     @State private var name: String = ""
     @State private var surname: String = ""
     @State private var connection: String = ""
-    @State var image: Image = Image("man")
+    @State private var image: Image = Image("man")
     @State private var inputImage: UIImage?
     @State private var showingImagePicker: Bool = false
-    @Binding var isPresented: Bool
+    @Environment(\.presentationMode) private var presentationMode
     @EnvironmentObject private var contactsData: CoreDataWorker
     
     func loadImage() {
@@ -45,7 +45,7 @@ struct AddContactView: View {
                 HStack(alignment: .top) {
                     Button("Cancel") {
                         withAnimation {
-                            isPresented.toggle()
+                            presentationMode.wrappedValue.dismiss()
                         }
                     }
                     .frame(width: 100, height: 50, alignment: .center)
@@ -56,7 +56,7 @@ struct AddContactView: View {
                                                  surname: surname.isEmpty ? nil : surname,
                                                  connection: connection.isEmpty ? nil : surname,
                                                  photo: inputImage)
-                            isPresented.toggle()
+                            presentationMode.wrappedValue.dismiss()
                         }
                     }
                     .disabled(name.isEmpty)
@@ -77,14 +77,7 @@ struct AddContactView: View {
 
 struct AddContactView_Previews: PreviewProvider {
     static var previews: some View {
-        ContactsViewSpy()
-    }
-}
-
-private struct ContactsViewSpy: View {
-    @State var boolian = true
-    var body: some View {
-        AddContactView(isPresented: $boolian)
+        AddContactView()
             .environmentObject(CoreDataWorker(PersistenceController.preview.container.viewContext))
     }
 }

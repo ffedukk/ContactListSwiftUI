@@ -13,7 +13,7 @@ struct ContactsView: View {
     
     @EnvironmentObject private var contactsData: CoreDataWorker
     @State private var isAddContactPresented: Bool = false
-        
+    
     var body: some View {
         NavigationView {
             List {
@@ -39,7 +39,7 @@ struct ContactsView: View {
             .disabled(isAddContactPresented)
         }
         .sheet(isPresented: $isAddContactPresented) {
-            AddContactView(isPresented: $isAddContactPresented)
+            AddContactView()
                 .environmentObject(contactsData)
                 .disableAutocorrection(true)
         }
