@@ -15,6 +15,8 @@ struct AddContactView: View {
     @State private var image: Image = Image("man")
     @State private var inputImage: UIImage?
     @State private var showingImagePicker: Bool = false
+    @State private var showingActionSheet: Bool = false
+    @State private var source: UIImagePickerController.SourceType = .photoLibrary
     @Environment(\.presentationMode) private var presentationMode
     @EnvironmentObject private var contactsData: CoreDataWorker
     
@@ -29,8 +31,9 @@ struct AddContactView: View {
                 .font(.title)
             AddPhotoImage(image: image)
                 .onTapGesture(count: 1) {
-                    self.showingImagePicker = true
+                    showingActionSheet = true
                 }
+                
             VStack(alignment: .leading, spacing: 20) {
                 Divider()
                 Group {
@@ -68,7 +71,16 @@ struct AddContactView: View {
         }
         .padding()
         .sheet(isPresented: $showingImagePicker, onDismiss: loadImage) {
-            ImagePicker(image: self.$inputImage)
+            ImagePicker(image: self.$inputImage, source: source)
+        }
+        .actionSheet(isPresented: $showingActionSheet) {
+            ActionSheet(title: Text("Choose a photo") ,buttons: [.default(Text("Take a photo")) {
+                source = .camera
+                showingImagePicker = true
+            }, .default(Text("From Library")) {
+                source = .photoLibrary
+                showingImagePicker = true
+            }, .cancel()])
         }
     }
 }
